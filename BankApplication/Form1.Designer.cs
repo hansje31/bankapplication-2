@@ -38,20 +38,24 @@ namespace BankApplication
             // 
             // txtAccountNumber
             // 
+            this.txtAccountNumber.Enabled = false;
             this.txtAccountNumber.Location = new System.Drawing.Point(287, 135);
             this.txtAccountNumber.Name = "txtAccountNumber";
             this.txtAccountNumber.Size = new System.Drawing.Size(207, 20);
             this.txtAccountNumber.TabIndex = 0;
             this.txtAccountNumber.TextChanged += new System.EventHandler(this.txtAccountNumber_TextChanged);
+            this.txtAccountNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Login);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(287, 176);
+            this.txtPassword.Enabled = false;
+            this.txtPassword.Location = new System.Drawing.Point(287, 178);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '⬤';
             this.txtPassword.Size = new System.Drawing.Size(207, 20);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Login);
             // 
             // btnLogin
             // 
@@ -62,6 +66,7 @@ namespace BankApplication
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // label1
             // 
@@ -75,7 +80,7 @@ namespace BankApplication
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(287, 158);
+            this.label2.Location = new System.Drawing.Point(287, 159);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 4;
@@ -93,6 +98,7 @@ namespace BankApplication
             this.Controls.Add(this.txtAccountNumber);
             this.Name = "Form1";
             this.Text = "Bank Application";
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
